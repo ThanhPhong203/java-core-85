@@ -7,8 +7,20 @@ public class AbstractionDemo {
         // 2. class con phai la abstract class
         // hoac phai trien khai abstract method cua class cha
         Cat cat = new Cat();
+
         cat.makeSound();
 
         // 3.Abstract class co the khong co abstract method nao
+
+        // interface
+        // mac dinh method: public abstract
+        // khong co constructor
+        // khong the khoi tao doi tuong
+        // tu khoa : implements
+        // da ke thua
+        Bird bird = new Bird();
+        bird.fly();
+
+
     }
 }

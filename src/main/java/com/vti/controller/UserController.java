@@ -12,20 +12,16 @@ import java.util.List;
 public class UserController {
     private IUserService service;
 
-    /**
-     * @return Danh sách user trong database
-     * */
-    public List<User> findAll()  {
-        return service.findAll();
+
+    public List<User> findEmployeeByProjectId(int projectId)  {
+        return service.findEmployeeByProjectId(projectId);
     }
 
     /**
      * @param id Định danh của user
      * @return Thông tin user tương ứng với id, hoặc null nếu không tồn tại
      */
-    public User findById(int id){
-        return service.findById(id);
-    }
+
 
     /**
      * @param email Email của user
@@ -33,8 +29,8 @@ public class UserController {
      * @return Thông tin user tương ứng với email và password,
      * hoặc null nếu đăng nhập thất bại
      */
-    public User findByEmailAndPassword(String email, String password) {
-        return service.findByEmailAndPassword(email, password);
+    public User findManagerByEmailAndPassword(String email, String password) {
+        return service.findManagerByEmailAndPassword(email, password);
     }
 
     /**
@@ -46,11 +42,8 @@ public class UserController {
      * @param email Email của user
      * @return Số bản ghi được tạo thành công
      */
-    public int create(String fullName, String email)  {
-        return service.create(fullName, email);
+    public List<User> findManager()  {
+        return service.findManager();
     }
 
-    public int deleteById(int id)  {
-        return service.deleteById(id);
-    }
 }
